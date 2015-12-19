@@ -1,3 +1,4 @@
 # TreeJS
-Javascript implementation of a tree
+- Javascript implementation of a tree
+
 
