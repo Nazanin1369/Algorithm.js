@@ -130,6 +130,7 @@ tree.traverseBF(function(node){
 });
 
 console.log('***** Contains *****');
+
 tree.contains(function(node) {
 	if(node.data === 'h') {
 		console.log(node);
