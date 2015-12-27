@@ -134,4 +134,4 @@ tree.contains(function(node) {
 	if(node.data === 'h') {
 		console.log(node);
 	}
-}, tree.traverseDF)
+}, tree.traverseDF);
