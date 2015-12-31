@@ -1,8 +1,23 @@
-# JS Algorithm
+# Algorithm.js
 
 This repository includes algorithmic problems , data structures implementation and Javascript based solutions to those.
 
-- Tree.js: Implementation of a tree: DFS, BFS, add and delete nodes
-- Fib.js: Recursive and dynamic programming implementation of Fibbonacci numbers problem
+### Tree
+  * traverseDFS
+  * traverseBFS
+  * containsNode
+  * addNode
+  * removeNode
+  * ...
+  
+### Graph
+  * Builiding a graph 
+  * DFS
+  * ...
+  
+### Fibbonacci problem
+  * RecursiveFib
+  * MemoizedFib: Dynamic programming
+  * BottomUpFin
 
 
