@@ -11,7 +11,7 @@ This repository includes algorithmic problems , data structures implementation a
   * ...
 
 ### Graph
-  * Builiding a graph
+  * Builiding a graph from a map
   * DFS
   * BFS
   * ...
@@ -19,6 +19,6 @@ This repository includes algorithmic problems , data structures implementation a
 ### Fibbonacci problem
   * RecursiveFib
   * MemoizedFib: Dynamic programming
-  * BottomUpFin
+  * BottomUpFib
 
 
