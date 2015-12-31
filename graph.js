@@ -66,7 +66,10 @@ Graph.prototype.DFS = function(start) {
     //get First node in stack
     while(stack.length !== 0) {
             var node = stack.pop();
-            console.log('****', node.label);
+            if(visited[node.label]) {
+                return;
+            }
+            console.log('** ', node.label);
             visited[node.label] = true;
             _.each(node.adjacents, function(adj) {
                 if(!visited[adj.label]) {
@@ -76,7 +79,51 @@ Graph.prototype.DFS = function(start) {
     }
 }
 
-var g = new Graph();
-g.init([ {'A': ['B']}, {'B': ['C']}, {'C': ['A']}]);
+Graph.prototype.BFS = function(start) {
+    var startNode, visited = {};
+    var queue = [];
+    //initialization
+     _.each(this.nodes, function(node) {
+        visited[node.label] = false;
+        if(node.label === start) {
+            startNode = node;
+            queue.push(startNode);
+        }
+    });
+    //get First node in queue
+    while(queue.length !== 0) {
+            var node = queue.shift();
+            if(visited[node.label]) {
+                return;
+            }
+            console.log('## ', node.label);
+            visited[node.label] = true;
+            _.each(node.adjacents, function(adj) {
+                if(!visited[adj.label]) {
+                    queue.push(adj);
+                }
+            });
+    }
+}
 
-g.DFS('A');
+var graph = new Graph().init([
+    {'A': ['B', 'G', 'D']},
+    {'B': ['E', 'F', 'A']},
+    {'C': ['H', 'F']},
+    {'D': ['A', 'F']},
+    {'E': ['G', 'B']},
+    {'F': ['C', 'D', 'B']},
+    {'G': ['A', 'E']},
+    {'H': ['C']}
+]);
+
+var g2 = new Graph().init([
+    {'A': ['C', 'B']},
+    {'B': ['C', 'D']},
+    {'C': ['A', 'D', 'B']},
+    {'D': ['C', 'B']}
+]);
+
+graph.DFS('A');
+
+graph.BFS('A');
