@@ -125,5 +125,4 @@ var g2 = new Graph().init([
 ]);
 
 graph.DFS('A');
-
 graph.BFS('A');
