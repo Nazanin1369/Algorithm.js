@@ -14,7 +14,7 @@ This repository includes algorithmic problems , data structures implementation a
   * Builiding a graph from a map
   * DFS
   * BFS
-  * ...
+  * isComplete
 
 ### Fibbonacci problem
   * RecursiveFib

@@ -25,7 +25,18 @@ function Graph() {
     this.nodes = [];
 }
 
-Graph.prototype.init = function(nodes) {
+Graph.prototype.isComplete = function() {
+    var e = 0;
+    var n = this.nodes.length;
+    _.each(this.nodes, function(node) {
+        e += node.adjacents.length;
+    });
+    this.isComplete = e / 2 == (n * (n-1) / 2);
+    return this.isComplete;
+}
+
+Graph.prototype.init = function(nodes, directed) {
+    this.directed = directed;
     var created = {};
     //create
     for(var node in nodes) {
@@ -50,6 +61,7 @@ Graph.prototype.init = function(nodes) {
             }
         }
     }
+    return this;
 }
 
 Graph.prototype.DFS = function(start) {
@@ -115,14 +127,16 @@ var graph = new Graph().init([
     {'F': ['C', 'D', 'B']},
     {'G': ['A', 'E']},
     {'H': ['C']}
-]);
+], false);
 
 var g2 = new Graph().init([
     {'A': ['C', 'B']},
     {'B': ['C', 'D']},
     {'C': ['A', 'D', 'B']},
     {'D': ['C', 'B']}
-]);
+], false);
 
 graph.DFS('A');
 graph.BFS('A');
+graph.isComplete();
+console.log(graph);
