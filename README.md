@@ -11,12 +11,12 @@ This repository includes algorithmic problems , data structures implementation a
   * ...
 
 ### Binary Search Tree
-    * BFS
-    * DFS
-    * insertion
-    * PreOrderTraversal
-    * PostOrderTraversal
-    * InOrderTraversal
+  * BFS
+  * DFS
+  * insertion
+  * PreOrderTraversal
+  * PostOrderTraversal
+  * InOrderTraversal
 
 ### Graph
   * Builiding a graph from a map
