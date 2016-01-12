@@ -91,6 +91,28 @@ BinarySearchTree.prototype.DFS = function(searchValue, callback) {
     this._root.DFS(searchValue, callback);
 };
 
+BinarySearchTree.prototype.breadthFirstTraversal = function(callback) {
+
+    var queue = [],
+        current = this.root;
+
+    if(current !== null) {
+        queue.push(current);
+    }
+
+    while(queue.length > 0) {
+        var tempNode = queue.shift();
+        callback(tempNode.value);
+        if(tempNode.left !== null) {
+            queue.push(tempNode.left);
+        }
+        if(tempNode.right !== null) {
+            queue.push(tempNode.right);
+        }
+    }
+};
+
+
 BinarySearchTree.prototype.inOrderTraversal = function(callback) {
     this._root.inOrderTraversal(callback);
 };
