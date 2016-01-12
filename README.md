@@ -10,6 +10,14 @@ This repository includes algorithmic problems , data structures implementation a
   * removeNode
   * ...
 
+### Binary Search Tree
+    * BFS
+    * DFS
+    * insertion
+    * PreOrderTraversal
+    * PostOrderTraversal
+    * InOrderTraversal
+
 ### Graph
   * Builiding a graph from a map
   * DFS
