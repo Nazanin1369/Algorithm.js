@@ -2,6 +2,8 @@
 
 This repository includes algorithmic problems , data structures implementation and Javascript based solutions to those.
 
+NOTE: Work in progress 
+
 ### Tree
   * traverseDFS
   * traverseBFS
