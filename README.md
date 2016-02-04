@@ -1,6 +1,7 @@
 # Algorithm.js
 
-This repository includes algorithmic problems , data structures implementation and Javascript based solutions to those.
+This repository includes algorithmic problems and data structures implementation in Javascript.
+This repo is still under development.
 
 ### Tree
   * traverseDFS
@@ -29,8 +30,8 @@ This repository includes algorithmic problems , data structures implementation a
   * MemoizedFib: Dynamic programming
   * BottomUpFib
   * ..
-  * 
-  
-### Interview problems
+
+### Arrays
+    * Binary IndexOf
 
 
