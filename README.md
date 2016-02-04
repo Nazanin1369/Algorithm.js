@@ -1,7 +1,8 @@
 # Algorithm.js
 
 This repository includes algorithmic problems and data structures implementation in Javascript.
-This repo is still under development.
+
+NOTE: Work in progress
 
 ### Tree
   * traverseDFS
@@ -33,5 +34,9 @@ This repo is still under development.
 
 ### Arrays
     * Binary IndexOf
+
+
+### BackTracking
+  * All possible subsets of set size n
 
 
