@@ -33,7 +33,7 @@ NOTE: Work in progress
   * ..
 
 ### Arrays
-    * Binary IndexOf
+  * Binary seacrch IndexOf
 
 
 ### BackTracking
