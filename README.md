@@ -38,5 +38,9 @@ NOTE: Work in progress
 
 ### BackTracking
   * All possible subsets of set size n
+  * 
+  
+### JS interview questions
+ * flatten an array
 
 
