@@ -1,6 +1,5 @@
 function LinkedList() {
     this._head = null;
-    this._current = null;
 }
 
 LinkedList.prototype.add = function(val) {

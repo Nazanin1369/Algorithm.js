@@ -1,6 +1,11 @@
 var _ = require('underscore')
 
 
+/**
+ * We have an array of objects A and an array of indexes B.
+ *  Reorder objects in array A with given indexes in array B. Do not change array A's length.
+ */
+
 var A = ['C', 'D', 'E', 'F', 'G'],
     B = [3, 0, 4, 1, 2]
     C = [];
@@ -8,7 +13,7 @@ var A = ['C', 'D', 'E', 'F', 'G'],
 _.each(A, function(letter, index) {
    C[B[index]] = letter;
 });
-//console.log(C);
+console.log(C);
 
 
 //*********************************************
