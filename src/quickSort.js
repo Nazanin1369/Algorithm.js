@@ -1,3 +1,7 @@
+
+var A = ['C', 'D', 'E', 'F', 'G'],
+    B = [3, 0, 4, 1, 2];
+
 function quickSort(array, left, right) {
     var index;
     if(array.length > 1) {
@@ -39,7 +43,18 @@ function swap(array, i, j) {
     var temp = array[i];
     array[i] = array[j];
     array[j] = temp;
+
+    var t = A[i];
+    A[i] = A[j];
+    A[j] = t;
+
+
 }
 
 var items = [4, 2, 6, 5, 3, 9];
-console.log(quickSort(items, 0, items.length - 1));
+//console.log(quickSort(items, 0, items.length - 1));
+
+
+
+console.log(quickSort(B, 0, B.length - 1));
+console.log(A);

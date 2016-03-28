@@ -1,0 +1,30 @@
+{
+  "name": "treejs",
+  "version": "1.0.0",
+  "description": "javascript algorithm practices",
+  "main": "index.js",
+  "dependencies": {
+    "underscore": "^1.8.3"
+  },
+  "devDependencies": {
+    "babelify": "^7.2.0",
+    "browserify": "^13.0.0",
+    "gulp-sourcemaps": "^1.6.0",
+    "vinyl-buffer": "^1.0.0",
+    "vinyl-source-stream": "^1.1.0",
+    "watchify": "^3.7.0"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Nazanin1369/TreeJS.git"
+  },
+  "author": "Nazanin Delam",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Nazanin1369/TreeJS/issues"
+  },
+  "homepage": "https://github.com/Nazanin1369/TreeJS#readme"
+}
