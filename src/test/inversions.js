@@ -16,8 +16,8 @@ the merging routine
 */
 
 mergeAndCount = function(List1, List2) {
-  List1 = List1.slice();
-  List2 = List2.slice();
+  //List1 = List1.slice();
+  //List2 = List2.slice();
   var count = 0;
   var outputList = [];
 
