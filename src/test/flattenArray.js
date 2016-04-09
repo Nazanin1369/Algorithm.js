@@ -32,11 +32,13 @@ function flatten(arr) {
 
 
 // Recursive Solution
-var faltten = function (list, items) {
-    if(String.prototype.toString.call(list) !== '[object Array]') {
-        items.push(list);
+var faltten = function (arr, items) {
+    var items = [];
+    if(String.prototype.toString.call(arr) !== '[object Array]') {
+        items.push(arr);
     }
-    for(var x in list) {
-        flatten(list[x], items);
+    for(var x in arr) {
+        flatten(arr[x], items);
     }
+    return items;
 }
