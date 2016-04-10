@@ -1,5 +1,6 @@
 /**
- * GIven a string "str" and pair of "N" swapping indices, generate a lexicographically largest string. Swapping indices can be reused any number times.
+ * Given a string "str" and pair of "N" swapping indices, generate a lexicographically largest string.
+ * Swapping indices can be reused any number times.
  * Eg 1) String = "abdc" Indices: (1,4) (3,4)
  * Answer: cdba, cbad, dbac,dbca
  * ​you should print only "dbca" which is lexicographically largest.
