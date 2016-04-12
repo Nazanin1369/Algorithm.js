@@ -14,6 +14,7 @@ negabinary = num => {
     while(num !== 0) {
         remainder = num % base;
         num = Math.ceil(num / base);
+        console.log(remainder)
         nega.push(remainder > 0 ? remainder : -remainder)
     }
     return nega.reverse().join('');

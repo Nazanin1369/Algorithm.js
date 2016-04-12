@@ -6,6 +6,14 @@
  * If n1 and n2 are not on the same tree, return NULL.
  * Try to do this in O(log(n)) time and O(1) space.
  */
+
+function Node(value) {
+    this.left = null;
+    this.right = null;
+    this.value = value;
+    return this;
+};
+
 nodeInForset = (n1, n2) => {
 
 }
