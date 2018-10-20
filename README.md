@@ -42,5 +42,7 @@ NOTE: Work in progress
   
 ### JS interview questions
  * flatten an array
+ * Operators problem
+ * Knapsack problem
 
 
