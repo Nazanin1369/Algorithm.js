@@ -4,7 +4,8 @@
   "description": "javascript algorithm practices",
   "main": "index.js",
   "dependencies": {
-    "underscore": "^1.8.3"
+    "@types/underscore": "^1.9.1",
+    "underscore": "^1.9.1"
   },
   "devDependencies": {
     "babelify": "^7.2.0",

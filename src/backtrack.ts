@@ -1,23 +1,23 @@
 // all possible subset of set size of n
-var _ = require('underscore');
+import * as _ from 'underscore';
 
-function backtrack(list, solution) {
+const backtrack = (list: Array<number>, solution: Array<number>) => {
     if(isSolution(list, solution)) {
         return;
     }
     var candidate = generateCandidate();
-    _.each(candidate, function(cand) {
+    _.each(candidate, cand => {
         var l = _.clone(solution);
-        l.push(cand);
+        //l.push(cand);
         backtrack(list, l);
     });
 }
 
-function generateCandidate() {
+const generateCandidate = () => {
     return [true, false];
 }
 
-function isSolution(l, s) {
+const isSolution = (l:Array<number>, s:Array<number>) => {
     if(l.length === s.length) {
         print(s, l);
         return true;
@@ -25,7 +25,7 @@ function isSolution(l, s) {
     return false;
 }
 
-function print(solution, list) {
+const print = (solution: Array<number>, list: Array<number>) => {
     var t = [];
     for(var i = 0; i < solution.length; i++) {
         if(solution[i]) {
@@ -34,5 +34,6 @@ function print(solution, list) {
     }
     console.log(t);
 }
+
 backtrack([1, 2, 3], []);
 

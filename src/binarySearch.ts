@@ -1,8 +1,8 @@
-function binaryIndexOf(searchValue) {
-    var minLength = 0;
-    var maxLength = this.length - 1;
-    var currentIndex;
-    var currentElement;
+const binaryIndexOf= searchValue => {
+    let currentIndex,
+        currentElement,
+        maxLength = this.length - 1,
+        minLength = 0;
 
     while(minLength <= maxLength) {
         currentIndex = (minLength + maxLength) / 2 | 0;;
