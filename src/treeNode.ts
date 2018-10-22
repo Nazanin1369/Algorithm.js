@@ -1,4 +1,4 @@
-class TreeNode {
+export class TreeNode {
     children: Array<TreeNode>;
     parent: TreeNode;
     data: string;

@@ -1,3 +1,5 @@
+import { TreeNode } from './treeNode';
+
 class Tree {
     _root:TreeNode;
 
