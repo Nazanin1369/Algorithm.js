@@ -8,7 +8,11 @@ class Tree {
     traverseDF(callback: Function): void {
         let recurse;
         (recurse = currentNode => {
+<<<<<<< HEAD
             for(let i = 0, length = currentNode.children.length; i < length; i++) {
+=======
+            for(var i = 0, length = currentNode.children.length; i < length; i++) {
+>>>>>>> 058534421e50b19f004d7f6b48c2c2baad914d68
                 recurse(currentNode.children[i]);
             }
             callback(currentNode);
@@ -16,6 +20,7 @@ class Tree {
     }
 
     traverseBF(callback: Function): void {
+<<<<<<< HEAD
         let queue = [];
         queue.push(this._root);
 
@@ -23,6 +28,13 @@ class Tree {
 
         while(currentTree) {
             for (let i = 0, length = currentTree.children.length; i <length; i++ ) {
+=======
+        var queue = [];
+        queue.push(this._root);
+        var currentTree = queue.shift();
+        while(currentTree) {
+            for (var i = 0, length = currentTree.children.length; i <length; i++ ) {
+>>>>>>> 058534421e50b19f004d7f6b48c2c2baad914d68
                 queue.push(currentTree.children[i]);
             }
             callback(currentTree);
@@ -35,7 +47,11 @@ class Tree {
     }
 
     add(data: string, toData:string, traversal) {
+<<<<<<< HEAD
         let child = new TreeNode(data),
+=======
+        var child = new TreeNode(data),
+>>>>>>> 058534421e50b19f004d7f6b48c2c2baad914d68
 		parent = null,
 		callback = function(node) {
 			if(node.data ===  toData) {
