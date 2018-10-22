@@ -1,8 +1,3 @@
-interface LinkedListNode {
-    value: string;
-    next: LinkedListNode;
-}
-
 class LinkedList {
     private _head = null;
 
