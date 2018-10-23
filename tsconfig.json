@@ -1,11 +1,11 @@
 {
     "compilerOptions": {
-        "module": "system",
         "removeComments": true,
         "preserveConstEnums": true,
         "sourceMap": true,
         "target": "ES6",
-        "outDir": "./out"
+        "outDir": "./out",
+        "module": "commonjs"
     },
     "include": [
         "src/**/*",
