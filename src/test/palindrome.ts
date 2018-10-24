@@ -10,10 +10,10 @@
 * "livci" should return false
 */
 
-// Track characters we've seen an odd number of times
+/// Track characters we've seen an odd number of times
 let charSet = new Set();
 
-const isPalindrome = (str: string): boolean => {
+const isPermutationPalindrome = (str: string): boolean => {
   for(let char of str) {
     if(charSet.has(char)) {
       charSet.delete(char);
@@ -26,6 +26,12 @@ const isPalindrome = (str: string): boolean => {
   // has one or zero characters without a pair
   return charSet.size <= 1;
 }
+const isPalindrome = (str:string): boolean => {
+  return str.toLowerCase() === str.toLowerCase().split('').reverse().join('');
+}
+
+console.log(isPermutationPalindrome('civic'));
+console.log(isPermutationPalindrome('livci'));
 
 console.log(isPalindrome('civic'));
 console.log(isPalindrome('livci'));
