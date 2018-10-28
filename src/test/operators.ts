@@ -13,7 +13,7 @@ const doTheMath = {
 }
 
 const performOperationInPlace = (numbers, operators) => {
-  for(operator of operators) {
+  for(let operator of operators) {
     numbers.unshift(doTheMath[operator](numbers.shift(), numbers.shift()));
   }
 
