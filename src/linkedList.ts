@@ -1,42 +1,52 @@
-class LinkedList {
-    private _head = null;
+export class LinkedListNode {
+    value: any;
+    next: LinkedListNode;
 
-    add(val: string): LinkedListNode {
-        var current,
-        node = {
-            value: val,
-            next: null
-        };
-
-        if(this._head === null) {
-            this._head = node;
-        } else {
-            current = this._head;
-            while(current.next) {
-                current = current.next;
-            }
-            current.next = node;
-        }
-
-        return node;
-    }
-
-    remove(node: LinkedListNode) {
-        var current, value = node;
-        if(this._head !== null) {
-            if(this._head === node) {
-                this._head = this._head.next;
-                node.next = null;
-                return value;
-            }
-            current = this._head;
-            while(current.next) {
-                if(current.next === node) {
-                    current.next = node.next;
-                    return value;
-                }
-                current = current.next;
-            }
-        }
+    constructor(value: any) {
+        this.value = value;
+        this.next = null;
     }
 }
+
+export class LinkedList {
+    head: LinkedListNode;
+    tail: LinkedListNode;
+
+    constructor() {
+        this.head = null;
+        this.tail = null;
+    }
+
+    add(value: any) {
+        let node = new LinkedListNode(value);
+
+        //check if list is empty
+        if(this.head === null) {
+            this.head = node;
+            this.tail = node;
+        } else {
+            [this.tail, node] = [node, this.tail];
+            node.next = this.tail;
+            this.tail.next = null;
+
+        }
+    }
+
+    print() {
+        let currentNode = this.head;
+
+        while(currentNode.next !== null) {
+            console.log(currentNode.value);
+            currentNode = currentNode.next;
+        }
+        console.log(this.tail.value);
+    }
+
+}
+
+const myLinkedList = new LinkedList();
+myLinkedList.add('1');
+myLinkedList.add('2');
+myLinkedList.add('3');
+myLinkedList.print();
+
