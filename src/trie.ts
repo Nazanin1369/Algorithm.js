@@ -6,6 +6,7 @@ export class TrieNode {
     constructor(value?: string) {
         this.value = value;
         this.children = new Map<string, TrieNode>();
+        this.end = false;
     }
 }
 
@@ -35,7 +36,8 @@ export class Trie {
             }
             level++;
 
-            if(level === word.length - 1) {
+
+            if(level === word.length) {
                 // world is done
                 newNode.end = true;
                 break;
@@ -58,11 +60,38 @@ export class Trie {
 
             // if we tranversed all charactes and there is end on the node
             // then we found the word in the trie
-            if(level === word.length - 1 && currenNode.end) {
+            if(level === word.length && currenNode.end) {
                 return true;
             }
         }
         return false;
+    }
+
+    startsWith(prefix: string): number {
+        let level = 0;
+        let numberOfWords = 0;
+        let currentNode = this.root;
+
+        for(let char of prefix) {
+            // character exists in the current node child
+            if(currentNode.children.get(char)) {
+                currentNode = currentNode.children.get(char);
+                level++;
+            } else {
+                // this prefix does not exist in the trie - invalid prefix
+                return -1;
+            }
+
+            // we traversed the whole prefix and all exists
+            if(level === prefix.length) {
+                console.log('prefix exist on level', level, prefix.length);
+                const words = this.findCompleteWords(currentNode, level);
+                //numberOfWords = words.length;
+
+            }
+        }
+
+        return numberOfWords;
     }
 
     print(): void {
@@ -78,7 +107,23 @@ export class Trie {
 
     }
 
-    printRecursive(children, level) {
+    private findCompleteWords(currentNode: TrieNode, level: number): Array<string> {
+        let result = [];
+
+        for(let child of currentNode.children.entries()) {
+            const node = child[1]
+            console.log(node)
+            if(node.end) {
+                // this is a full word
+                console.log(node)
+                result.push(node.value);
+            }
+        }
+
+        return result;
+    }
+
+    private printRecursive(children, level) {
         for(let c of children) {
             let val = c[1];
             if(typeof val !== 'string' && val.children) {
@@ -95,11 +140,12 @@ const words = ['apple', 'aplication'];
 
 let trie = new Trie();
 trie.insert('apple');
-trie.insert('apeal');
+trie.insert('apply');
 //trie.print();
 
-console.log(trie.search('apple'));
-console.log(trie.search('app'));
-console.log(trie.search('apeal'));
+//console.log(trie.search('apple'));
+//console.log(trie.search('app'));
+//console.log(trie.search('apeal'));
 
+console.log(trie.startsWith('app'));
 
