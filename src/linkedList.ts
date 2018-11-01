@@ -32,14 +32,26 @@ export class LinkedList {
         }
     }
 
+    remove(value: any) {
+       let prevNode = this.head;
+       let currentNode = this.head;
+
+       do {
+           if(currentNode.value === value) {
+               // we found the node
+               // remove the node
+               // assign the prevNode next to currentNode next
+               prevNode.next = currentNode.next
+           }
+       }while(currentNode.next !== null, currentNode = currentNode.next)
+    }
+
     print() {
         let currentNode = this.head;
 
-        while(currentNode.next !== null) {
+        do {
             console.log(currentNode.value);
-            currentNode = currentNode.next;
-        }
-        console.log(this.tail.value);
+        } while(currentNode.next !== null, currentNode = currentNode.next);
     }
 
 }
