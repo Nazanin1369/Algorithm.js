@@ -1,16 +1,18 @@
-export class LinkedListNode {
+export class DoublyLinkedListNode {
     value: any;
-    next: LinkedListNode;
+    next: DoublyLinkedListNode;
+    prev: DoublyLinkedListNode;
 
     constructor(value: any) {
         this.value = value;
         this.next = null;
+        this.prev = null;
     }
 }
 
-export class LinkedList {
-    head: LinkedListNode;
-    tail: LinkedListNode;
+export class DoublyLinkedList {
+    head: DoublyLinkedListNode;
+    tail: DoublyLinkedListNode;
 
     constructor() {
         this.head = null;
@@ -18,15 +20,18 @@ export class LinkedList {
     }
 
     add(value: any) {
-        let node = new LinkedListNode(value);
+        let node = new DoublyLinkedListNode(value);
 
         //check if list is empty
         if(this.head === null) {
             this.head = node;
             this.tail = node;
         } else {
+            console.log(this.tail);
             [this.tail, node] = [node, this.tail];
             node.next = this.tail;
+            this.tail.prev = node;
+            console.log(this.tail)
             this.tail.next = null;
 
         }
@@ -68,14 +73,16 @@ export class LinkedList {
 
 }
 
-const myLinkedList = new LinkedList();
+const myLinkedList = new DoublyLinkedList();
 myLinkedList.add('1');
 myLinkedList.add('2');
-myLinkedList.add('3');
-myLinkedList.add('4');
 myLinkedList.print();
-console.log('--------------');
-myLinkedList.remove('3');
-myLinkedList.print();
-console.log('--------------');
+// myLinkedList.add('2');
+// myLinkedList.add('3');
+// myLinkedList.add('4');
+// myLinkedList.print();
+// console.log('--------------');
+// myLinkedList.remove('3');
+// myLinkedList.print();
+// console.log('--------------');
 
