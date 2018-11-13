@@ -83,7 +83,7 @@ const handleUserInput = (event) => {
     autoCompleteInputEle.value = itemValue;
     closeAutocomplete();
  }
-
+ 
  const closeAutocomplete = () => {
     autoCompleteItemsEle.style.display = 'none';
  }
