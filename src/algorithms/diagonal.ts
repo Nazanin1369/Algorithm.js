@@ -19,17 +19,16 @@ const sampleMatrix = [
   ];
   
 const diagonalTraversal = matrix => {
-
     const numberOfcolumns = matrix[0].length;
     const numberOfRows = matrix.length;
+
     let output = [];
 
     for(let row = 0; row < numberOfRows; row++) {
         for(let column = 0; column < numberOfcolumns; column++) {
             
             if(inFirstRow(matrix, row, column) || inLastColumn(matrix, row, column)) {
-                const traversal = traverseDiagonal(matrix, row, column);
-                output.push(traversal);
+                output.push(traverseDiagonal(matrix, row, column));
             }
         }
     }
@@ -55,7 +54,6 @@ const diagonalTraversal = matrix => {
   }
   
   const traverseDiagonal = (matrix, row, column) => {
-    
     let diagonal = [];
     
     while(inBound(matrix, row, column)) {
