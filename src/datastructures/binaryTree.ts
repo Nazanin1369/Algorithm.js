@@ -19,21 +19,28 @@ export class BinaryTree {
     }
 
     insert(value): void {
+
+        const newNode = new BinaryNode(value);
         if(this.root === null) {
-            this.root = new BinaryNode(value);
+            console.log('insert root: ', value)
+            this.root = newNode
             return;
         }
 
         this.levelOrderTraversal( node => {
+            //console.log('left: ', node.left)
+            //console.log('right: ', node.right)
+            console.log(node)
+
             if(node.left === null) {
                 console.log('insert in left', node.value)
-                node.left = new BinaryNode(value);
+                node.left = newNode;
                 return;
             }
 
             if(node.right === null) {
                 console.log('insert in right', node.value)
-                node.right = new BinaryNode(value);
+                node.right = newNode;
                 return;
             }
         }, this.root);
@@ -84,7 +91,8 @@ export class BinaryTree {
         }
 
         if(level === 1) {
-            console.log(node.value);
+            //console.log(node.value);
+            console.log('**')
             action.call(this, node);
         }
 
@@ -95,7 +103,7 @@ export class BinaryTree {
     }
 
     print(): void {
-        this.levelOrderTraversal((node) => {
+        this.postOrderTraversal((node) => {
             console.log('-', node.value)
         }, this.root);
     }
@@ -147,4 +155,4 @@ binaryTree.insert(1);
 binaryTree.insert(2);
 binaryTree.insert(3);
 
-binaryTree.print();
+//binaryTree.print();
