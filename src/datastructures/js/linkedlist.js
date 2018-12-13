@@ -24,6 +24,7 @@ function createLinkedlist() {
 
             this.tail.next = node;
             this.tail = node;
+            this.length++;
             return node;
         },
         pop() {
