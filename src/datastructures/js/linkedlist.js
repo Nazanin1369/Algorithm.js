@@ -128,3 +128,5 @@ const values = ['a', 'b', 'c', 'd', 'e'];
 const nodes = values.map(val => list.push(val));
 
 console.log(list.print())
+
+exports.createLinkedlist = createLinkedlist;
