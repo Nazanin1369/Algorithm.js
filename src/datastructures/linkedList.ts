@@ -33,29 +33,29 @@ export class LinkedList {
     }
 
     remove(value: any) {
-       let prevNode = this.head;
-       let currentNode = this.head;
+        let prevNode = this.head;
+        let currentNode = this.head;
 
-       do {
-           if(currentNode.value === value) {
-               if(this.head === currentNode) {
-                   // it is head
-                   this.head = currentNode.next;
-                   break;
-               } else if (currentNode.next === null) {
-                   // it is the last node
-                   prevNode.next = null;
-                   this.tail = prevNode;
-                   break;
-               } else {
-                   // it is in the middle
-                   prevNode.next = currentNode.next;
-                   break;
-               }
-           } else {
-            prevNode = currentNode;
-           }
-       } while(currentNode.next !== null, currentNode = currentNode.next)
+        do {
+            if(currentNode.value === value) {
+                if(this.head === currentNode) {
+                    // it is head
+                    this.head = currentNode.next;
+                    break;
+                } else if (currentNode.next === null) {
+                    // it is the last node
+                    prevNode.next = null;
+                    this.tail = prevNode;
+                    break;
+                } else {
+                    // it is in the middle
+                    prevNode.next = currentNode.next;
+                    break;
+                }
+            } else {
+                prevNode = currentNode;
+            }
+        } while(currentNode.next !== null, currentNode = currentNode.next)
     }
 
     print() {

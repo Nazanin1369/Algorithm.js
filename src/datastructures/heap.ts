@@ -19,7 +19,7 @@ export class Heap {
         let element = this.list[0];
         let lastElement = this.list.pop();
 
-        if(this.list.length > 0) {
+        if (this.list.length > 0) {
 
             this.list[0] = lastElement;
             this.moveDown(0);
@@ -32,12 +32,12 @@ export class Heap {
         let element = this.list[index];
         const score = this.scoreFunction(element);
 
-        while(index >= 0) {
+        while (index >= 0) {
             // Get the parent element
             let parentIndex = Math.floor(index / 2);
             let parent = this.list[parentIndex];
 
-            if(this.scoreFunction(parent) <= score) {
+            if (this.scoreFunction(parent) <= score) {
                 break;
             }
 
@@ -54,35 +54,35 @@ export class Heap {
         let element = this.list[index];
         let score = this.scoreFunction(element);
 
-        while(true) {
+        while (true) {
             let firstChildIndex = (2 * index) + 1;
             let secondchildIndex = firstChildIndex + 1;
             let indexToSwap = null;
             let firstChildScore;
             let secondChildScore;
 
-            if(firstChildIndex < length) {
+            if (firstChildIndex < length) {
                 let child = this.list[firstChildIndex];
                 let firstChildScore = this.scoreFunction(child);
 
-                if(firstChildScore <= score) {
+                if (firstChildScore <= score) {
                     indexToSwap = firstChildIndex;
-                } 
+                }
             }
 
-            if(secondchildIndex < length) {
+            if (secondchildIndex < length) {
                 let child = this.list[secondchildIndex];
                 let scoreToCompare = indexToSwap === null ? score : firstChildScore;
 
                 secondChildScore = this.scoreFunction(child);
 
-                if(secondChildScore <= scoreToCompare) {
+                if (secondChildScore <= scoreToCompare) {
                     indexToSwap = secondchildIndex;
-                } 
+                }
             }
 
-             // No need to swap further, we are done.
-            if(indexToSwap === null) {
+            // No need to swap further, we are done.
+            if (indexToSwap === null) {
                 break;
             }
 
