@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <title>Dom Walker</title>
+        <style>
+            * {
+                box-sizing: border-box;
+            }
+            body {
+                margin: 0;
+                padding: 0;
+                height: 100vh;
+                font-size: 16px;
+                font-family: Comic Sans MS, courier, verdana;
+            }
+
+            h2 {
+                margin: 0;
+                line-height: 0.7em;
+            }
+
+            header {
+                background-color: plum;
+                padding: 1em;
+                text-align: center;
+                height: 10vh;
+            }
+
+            nav{
+                float: left;
+                height: 100%;
+                background-color: powderblue;
+                width: 20%;
+                padding: 1.5em;
+            }
+
+            article {
+                float: left;
+                height: 100%;
+                width: 80%;
+                padding: 1.5em;
+            }
+
+            section {
+                height: 90vh;
+                width: 100%;
+            }
+
+            nav ul {
+                list-style: none;
+            }
+
+            footer {
+                background-color:lavender;
+                padding: 10px;
+                text-align: center;
+                color: white;
+            }
+
+            @media (max-width: 600px) {
+                nav, article {
+                    width: 100%;    
+                    height: auto;
+                }
+            }
+
+        </style>
+    </head>
+    <body>
+        <header>
+            <h2 id="title">Cities</h2>
+        </header>
+
+        <section>
+            <nav>
+                <ul>
+                <li><a href="#">London</a></li>
+                <li><a href="#">Paris</a></li>
+                <li><a href="#">Tokyo</a></li>
+                </ul>
+            </nav>
+
+            <article>
+                <h1>London</h1>
+                <p>London is the capital city of England. It is the most populous city in the  United Kingdom, with a metropolitan area of over 13 million inhabitants.</p>
+                <p>Standing on the River Thames, London has been a major settlement for two millennia, its history going back to its founding by the Romans, who named it Londinium.</p>
+            </article>
+        </section>
+
+        <footer>
+        <p>Footer</p>
+        </footer>
+        <script src="./walker.js" type="text/javascript"></script>
+    </body>
+</html>
