@@ -8,10 +8,11 @@
         "module": "commonjs"
     },
     "include": [
-        "src/**/*",
-        "src/*"
+        "src/algorithms/*",
+        "src/datastructures/*"
     ],
     "exclude": [
-        "node_modules"
+        "node_modules",
+        "src/js/*"
     ]
 }

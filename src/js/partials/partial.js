@@ -9,27 +9,24 @@ function greeting(type, name, place) {
 }
 
 // This assumnes we are always passing the correct order
-Function.prototype.partial = function () {
-  const slice = Array.prototype.slice;
+Function.prototype.partial = function (...args) {
   const fn = this;
-  const args = slice.call(arguments);
 
-  return function () {
-    return fn.apply(this, args.concat(slice.call(arguments)));
+  return function (...args2) {
+    return fn.apply(this, [args, args2]);
   }
 }
 
 
-Function.prototype.advancedPartial = function () {
+Function.prototype.advancedPartial = function (...args) {
   const slice = Array.prototype.slice;
   const fn = this;
-  const args = arguments;
 
-  return function () {
+  return function (...args2) {
     let actual = [];
 
-    for(let i = 0; i < args.lenght, i < arguments.length; i++) {
-      actual[i] = (arguments[i] === undefined) ?  args[i] : arguments[i];
+    for(let i = 0; i < args.lenght, i < args2.length; i++) {
+      actual[i] = (args2[i] === undefined) ?  args[i] : args2[i];
     }
     return fn.apply(this, actual);
   }
