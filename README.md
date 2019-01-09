@@ -4,6 +4,8 @@ This repository includes algorithmic problems and data structures implementation
 
 NOTE: Work in progress
 
+### DataStructures
+
 ### Tree
   * traverseDFS
   * traverseBFS
